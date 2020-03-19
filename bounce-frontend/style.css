@@ -1,0 +1,17 @@
+body {
+    background-color: pink;
+}
+
+#welcome-head {
+    text-align: center;
+}
+
+#login {
+    text-align: center;
+    border-style: double;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1%;
+    padding-bottom: 4%;
+}

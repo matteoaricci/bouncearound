@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_154423) do
 
   create_table "levels", force: :cascade do |t|
     t.string "backdrop"
+    t.integer "level_number"
+    t.string "level_title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_154423) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "current_level"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
