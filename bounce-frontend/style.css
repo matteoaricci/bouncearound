@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'lazer84regular';
+    src: url('lazer84-webfont.woff2') format('woff2'),
+         url('lazer84-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: pink;
 }
 
 #welcome-head {
     text-align: center;
+    font-family: 'Lazer';
 }
 
 #login {
