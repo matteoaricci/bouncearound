@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_154423) do
+ActiveRecord::Schema.define(version: 2020_03_19_164723) do
+
+  create_table "gameplays", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "level_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "levels", force: :cascade do |t|
     t.string "backdrop"
     t.integer "level_number"
     t.string "level_title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "level_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
