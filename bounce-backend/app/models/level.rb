@@ -1,5 +1,5 @@
 class Level < ApplicationRecord
-    has_many :sessions
-    has_many :users, through: :sessions
+    has_many :gameplays
+    has_many :users, through: :gameplays
     
 end
