@@ -1,17 +1,15 @@
-function renderLogin() {
+function renderNewUserForm(event) {
     let mainBox = document.getElementById("main")
     mainBox.innerText = ""
-   
+
     let form = document.createElement('form')
-    let logIn = document.createElement('h1')
+    let makeAccount = document.createElement('h1')
     let name = document.createElement('input')
     let password = document.createElement('input')
     let submit = document.createElement('input')
-    let createButtonBox = document.createElement("div")
-    let create = document.createElement('button')
-    
-    form.id = "login-form"
-    logIn.innerText = "Login"
+
+    form.id = "create-user-form"
+    makeAccount.innerText = "Create New Account"
     name.type = "text"
     name.name = "name"
     name.placeholder = "Username"
@@ -19,42 +17,31 @@ function renderLogin() {
     password.name = "password"
     password.placeholder = "Password"
     submit.type = "submit"
-    form.addEventListener("submit", processLogin)
-    createButtonBox.id = "create-user-button"
-    create.innerText = "Create New Account"
-    create.addEventListener('click', renderNewUserForm)
+    form.addEventListener("submit", processCreateUser)
     
-    form.append(logIn, name, password, submit)
-    createButtonBox.append(create)
-    mainBox.append(form, createButtonBox)
+    form.append(makeAccount, name, password, submit)
+    mainBox.append(form)
 }
 
-function renderGuest() {
-    console.log("skipping to guest account")
-}
-
-function processLogin(event) {
+function processCreateUser(event) {
     event.preventDefault()
-    // console.log("logged in")
+    console.log("creating new user....")
+
     let form = event.currentTarget
     let name = form.children.name.value
     let password = form.children.password.value
 
     let payload = {name: name, password: password}
-    
 
-    fetch('http://localhost:3000/user/login', {
+    fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)
     })
-        .then(response => response.json())
+    .then(response => response.json())
         .then(user => console.log(user))
         .catch(error => {
-            alert("No user found with those credentials")
+            alert("Username already taken or missing password")
         })
     form.reset()
 }
-
-
-

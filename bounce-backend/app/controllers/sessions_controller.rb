@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
             render json: user
         else
             render json: {
-            message: "Bad request"
+            message: "No user found"
             }, status: 204
         end
     end
