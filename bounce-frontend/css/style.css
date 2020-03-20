@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'lazer84regular';
+    src: url('../fonts/lazer84-webfont.woff2') format('woff2'),
+         url('../fonts/azer84-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: grey;
+}
+
+#welcome-head {
+    text-align: center;
+    font-family: 'lazer84regular';
+    font-size: 72px;
+    background: -webkit-linear-gradient(red, rgb(0, 225, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 10px 10px pink;
+}
+
+#login {
+    font-family: 'lazer84regular';
+    text-align: center;
+    border-style: double;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1%;
+    padding-bottom: 4%;
+}
