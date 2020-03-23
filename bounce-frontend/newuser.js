@@ -25,7 +25,7 @@ function renderNewUserForm(event) {
 
 function processCreateUser(event) {
     event.preventDefault()
-    console.log("creating new user....")
+    // console.log("creating new user....")
 
     let form = event.currentTarget
     let name = form.children.name.value
@@ -39,9 +39,16 @@ function processCreateUser(event) {
         body: JSON.stringify(payload)
     })
     .then(response => response.json())
-        .then(user => console.log(user))
+        .then(user => {
+            if (user.id) {
+            console.log(user)}
+            else {
+            alert(`${user.message}`)
+            }
+            
+        })
         .catch(error => {
-            alert("Username already taken or missing password")
+            alert("Sorry, there was a problem with the server!")
         })
     form.reset()
 }

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function welcomePageSetup() {
+
 let loginBtn = document.getElementById("login-btn")
 let guestBtn = document.getElementById("guest-btn")
 let newUserBtn = document.getElementById("new-user-btn")

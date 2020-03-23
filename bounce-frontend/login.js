@@ -35,7 +35,6 @@ function renderGuest() {
 
 function processLogin(event) {
     event.preventDefault()
-    // console.log("logged in")
     let form = event.currentTarget
     let name = form.children.name.value
     let password = form.children.password.value
@@ -49,10 +48,22 @@ function processLogin(event) {
         body: JSON.stringify(payload)
     })
         .then(response => response.json())
-        .then(user => console.log(user))
+        .then(user => 
+            {console.log(user)
+            sessionStorage.setItem("userId", `${user.id}`)
+            sessionStorage.setItem("userName", `${user.name}`)
+            sessionStorage.setItem("userCurrentLevel", `${user.current_level}`)
+
+        })
         .catch(error => {
             alert("No user found with those credentials")
         })
+    
+        if (sessionStorage.getItem("userName")) {
+            let welcomeBanner = document.getElementById("welcome-head")
+            welcomeBanner.innerText = `Welcome ${sessionStorage.getItem("userName")}`
+                }
+        
     form.reset()
 }
 
