@@ -18,9 +18,9 @@ let direction = 1;
 
 let firstBall = new Ball(300, 350, 10, 5, z);
 let secondBall = new Ball(200, 250, 29, 5, z);
-let firstBlock = new Block(200, 200, 400, 200, 0)
-let secondBlock = new Block(200, 400, 400, 400, 0)
-let thirdBlock = new Block(200, 300, 400, 300, 0)
+let firstBlock = new Block(200, 200, 400, 200, 0, '#FF1493')
+let secondBlock = new Block(200, 400, 400, 400, 0, '#FF1493')
+let thirdBlock = new Block(200, 300, 400, 300, 0, '#FF1493')
 
 blocks.push(firstBlock)
 blocks.push(secondBlock)

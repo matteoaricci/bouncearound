@@ -20,12 +20,14 @@ class Ball {
 
 function checkCollide(ball, block){
    var hit = collideLineCircle(block.x1, block.y1, block.x2, block.y2, ball.x, ball.y, ball.radius)
-    
-    if (hit) {
+   if (hit) {
+    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16)
         ball.speed = -ball.speed
-        let beep = new p5.Oscillator(200, 'triangle')
+        // let beep = new p5.Oscillator(200, 'triangle')
         // beep.start()
         // beep.stop(0.1)
+        block.color = (randomColor)
+        console.log(block.color)
     }
     if (ball.x >= canvas.width || ball.x <= 0) {
         ball.speed = -ball.speed
