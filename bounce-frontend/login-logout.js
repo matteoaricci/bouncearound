@@ -1,7 +1,9 @@
 function renderLogin() {
+    let navBar = document.getElementById("navbar")
     let mainBox = document.getElementById("main")
     mainBox.innerText = ""
    
+    navBar.innerText = ""
     let form = document.createElement('form')
     let logIn = document.createElement('h1')
     let name = document.createElement('input')
@@ -29,10 +31,6 @@ function renderLogin() {
     mainBox.append(form, createButtonBox)
 }
 
-function renderGuest() {
-    console.log("skipping to guest account")
-}
-
 function processLogin(event) {
     event.preventDefault()
     let form = event.currentTarget
@@ -57,14 +55,17 @@ function processLogin(event) {
             renderUserShowPage(user)
             } else {
             alert(`${user.message}`)
+            form.reset()
             } 
         })
         .catch(error => {
             alert("Sorry, there was a problem with the server!")
+            form.reset()
         })
         
-    form.reset()
 }
 
-
-
+function processLogout(event) {
+localStorage.clear()
+welcomePageSetup()
+}
