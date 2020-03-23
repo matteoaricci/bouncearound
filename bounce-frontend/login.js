@@ -48,21 +48,20 @@ function processLogin(event) {
         body: JSON.stringify(payload)
     })
         .then(response => response.json())
-        .then(user => 
-            {console.log(user)
-            sessionStorage.setItem("userId", `${user.id}`)
-            sessionStorage.setItem("userName", `${user.name}`)
-            sessionStorage.setItem("userCurrentLevel", `${user.current_level}`)
-
+        .then(user => {
+            if (user.id) {
+            console.log(user)
+            localStorage.setItem("userId", `${user.id}`)
+            localStorage.setItem("userName", `${user.name}`)
+            localStorage.setItem("userCurrentLevel", `${user.current_level}`)
+            renderUserShowPage(user)
+            } else {
+            alert(`${user.message}`)
+            } 
         })
         .catch(error => {
-            alert("No user found with those credentials")
+            alert("Sorry, there was a problem with the server!")
         })
-    
-        if (sessionStorage.getItem("userName")) {
-            let welcomeBanner = document.getElementById("welcome-head")
-            welcomeBanner.innerText = `Welcome ${sessionStorage.getItem("userName")}`
-                }
         
     form.reset()
 }

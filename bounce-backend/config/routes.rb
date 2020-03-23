@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :levels
 
   post '/user/login', to: "sessions#create_user_login"
+  post '/user/finduser', to: "users#find_user"
 end

@@ -6,8 +6,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.new(name: params[:name], current_level: 1, password: params[:password])
-        
+        user = User.new(name: params[:name], current_level: 1, password: params[:password])   
         if user.valid?
             user.save
             render json: user
@@ -16,7 +15,12 @@ class UsersController < ApplicationController
                 message: user.errors.full_messages
                  }
         end
-     
     end
+
+    def find_user
+        user = User.find(params[:id])
+        render json: user
+    end
+
 end
 

@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
             render json: user
         else
             render json: {
-            message: "No user found"
-            }, status: 204
+                message: "No user found with those credentials"
+                 }
         end
     end
 

@@ -41,11 +41,15 @@ function processCreateUser(event) {
     .then(response => response.json())
         .then(user => {
             if (user.id) {
-            console.log(user)}
+            console.log(user)
+            localStorage.setItem("userId", `${user.id}`)
+            localStorage.setItem("userName", `${user.name}`)
+            localStorage.setItem("userCurrentLevel", `${user.current_level}`)
+            renderUserShowPage(user)
+            }
             else {
             alert(`${user.message}`)
-            }
-            
+            } 
         })
         .catch(error => {
             alert("Sorry, there was a problem with the server!")
