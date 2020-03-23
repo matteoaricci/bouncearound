@@ -15,21 +15,24 @@ class Ball {
         ellipse(this.x, this.y, this.radius, this.radius)
     }
 
-    checkCollide(){
+    checkCollide(block){
        var hit = collideLineCircle(block.x1, block.y1, block.x2, block.y2, this.x, this.y, this.radius)
         
-        if (hit != true && this.x >= canvas.width || this.x <= 0) {
-            xspeed = -xspeed
-            } 
-        if (hit != true && this.y >= canvas.height || this.y <= 0) {
-           yspeed = -yspeed
-            }
-
         if (hit) {
             yspeed = -yspeed
-            let beep = new p5.Oscillator(100, 'triangle')
+            let beep = new p5.Oscillator(200, 'triangle')
             beep.start()
             beep.stop(0.1)
+        }
+    }
+
+    wallCollide(){
+        if (this.x >= canvas.width || this.x <= 0) {
+            xspeed = -xspeed
+        }
+
+        if (this.y >= canvas.height || this.y <= 0) {
+            yspeed = -yspeed
         }
     }
 }
