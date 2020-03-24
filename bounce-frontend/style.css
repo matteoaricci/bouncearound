@@ -1,7 +1,15 @@
 @font-face {
     font-family: 'lazer84regular';
     src: url('fonts/lazer84-webfont.woff2') format('woff2'),
-         url('fonts/azer84-webfont.woff') format('woff');
+         url('fonts/lazer84-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'karmatic-arcade';
+    src: url('fonts/ka1-webfont.woff2') format('woff2'),
+         url('fonts/ka1-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -23,4 +31,10 @@ body {
     margin-right: auto;
     padding-top: 1%;
     padding-bottom: 4%;
+}
+
+#enter {
+    font-family: 'karmatic-arcade';
+    text-align: center;
+    padding-top: 10%;
 }
