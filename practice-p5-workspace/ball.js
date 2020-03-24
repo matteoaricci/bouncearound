@@ -24,7 +24,7 @@ function checkCollide(ball, block ) {
         ball.xSpeed = -ball.xSpeed;
     } else if (ball.x < 0 && ball.xSpeed < 0) {
         ball.xSpeed = -ball.xSpeed
-    } else if (ball.y > width && ball.ySpeed > 0) {
+    } else if (ball.y > height && ball.ySpeed > 0) {
         ball.ySpeed = -ball.ySpeed
     } else if (ball.y < 0 && ball.ySpeed < 0) {
         ball.ySpeed = -ball.ySpeed

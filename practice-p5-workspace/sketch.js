@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', pageSetup)
 
 function pageSetup() {
-    let theCanvas = document.getElementById('defaultCanvas0')
     document.addEventListener('mousedown', downClick)
     document.addEventListener('mouseup', upClick)
 }
 
 function setup() {
-    canvas = createCanvas(650, 650);
+    canvas = createCanvas(1250, 650);
+    let theCanvas = document.getElementById('the-canvas')
 }
 
 let blocks = []
