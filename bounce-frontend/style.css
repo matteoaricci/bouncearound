@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'lazer84regular';
-    src: url('fonts/lazer84-webfont.woff2') format('woff2'),
-         url('fonts/lazer84-webfont.woff') format('woff');
+    font-family: 'karmatic-arcade';
+    src: url('fonts/ka1-webfont.woff2') format('woff2'),
+         url('fonts/ka1-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'karmatic-arcade';
-    src: url('fonts/ka1-webfont.woff2') format('woff2'),
-         url('fonts/ka1-webfont.woff') format('woff');
+    font-family: 'lazer84regular';
+    src: url('fonts/lazer84-webfont.woff2') format('woff2'),
+         url('fonts/lazer84-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -315,6 +315,7 @@ body {
 }
 
 div.login-buttons button {
+    font-family: 'karmatic-arcade';
     margin: 2%;
     transition: all 0.2s ease-in-out;
     font-weight: normal;

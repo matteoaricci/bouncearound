@@ -23,6 +23,7 @@ function renderLogin() {
     submit.type = "submit"
     form.addEventListener("submit", processLogin)
     createButtonBox.id = "create-user-button"
+    createButtonBox.className = 'btn btn-light'
     create.innerText = "Create New Account"
     create.addEventListener('click', renderNewUserForm)
     

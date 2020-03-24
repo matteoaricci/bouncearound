@@ -8,6 +8,7 @@ function pageSetup() {
 function setup() {
     canvas = createCanvas(1250, 650);
 }
+  
 
 let blocks = []
 let balls = []
