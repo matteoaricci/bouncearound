@@ -14,14 +14,13 @@ let blocks = []
 let balls = []
 let x = 0
 let y = 0
-let xspeed = 20;
-let yspeed = 10;
-let z = 11
-let ballSpeed = 5;
 
 
-let firstBall = new Ball(300, 350, 4, 5, z);
-let secondBall = new Ball(200, 250, 29, ballSpeed, z);
+
+
+let firstBall = new Ball(300, 350, 4, 2, 5);
+let secondBall = new Ball(200, 250, 29, 10, 5);
+
 let firstBlock = new Block(200, 200, 400, 200, 0, '#FF1493')
 let secondBlock = new Block(200, 400, 400, 400, 0, '#FF1493')
 let thirdBlock = new Block(200, 300, 400, 300, 0, '#FF1493')
@@ -32,6 +31,7 @@ blocks.push(thirdBlock)
 
 balls.push(firstBall)
 balls.push(secondBall)
+
 let clickData = []
 
 function downClick() {
@@ -69,8 +69,8 @@ function draw() {
             blo.show()
             checkCollide(ball, blo)
         });
-        
-        ball.x += ball.speed;
-        ball.y += ball.speed;
+
+        ball.x += ball.xSpeed;
+        ball.y += ball.ySpeed;
     });
 }

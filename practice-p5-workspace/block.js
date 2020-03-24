@@ -7,8 +7,13 @@ class Block {
         this.direction = direction
         this.color = color
     }
+
+    // https://editor.p5js.org/lukeomalley/sketches/BQ2byNIdm
     show() {
         stroke(this.color)
         line(this.x1, this.y1, this.x2, this.y2)
+    }
+    glow(){
+       
     }
 }
