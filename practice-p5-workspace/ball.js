@@ -13,8 +13,7 @@ class Ball {
     show() {
         stroke(100, 200, 200)
         strokeWeight(4)
-        // fill(255, 255, 255)
-        noFill()
+        fill(200, 100, 100)
         ellipse(this.x, this.y, this.radius, this.radius)
     }
 }
@@ -66,4 +65,12 @@ function calculateVectors(ball, block) {
     let len = Math.sqrt(ball.ref.x * ball.ref.x + ball.ref.y * ball.ref.y)
     ball.xSpeed = (ball.ref.x / len) * ball.speed
     ball.ySpeed = (ball.ref.y / len) * ball.speed
+}
+
+function checkGoal(ball, point){
+    let hit = collideRectCircle(point.x1, point.y1, point.w, point.h, ball.x, ball.y, ball.radius * 2)
+    if (hit) {
+        ball.xSpeed = 0
+        ball.ySpeed = 0
+    }
 }

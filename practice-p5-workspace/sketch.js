@@ -7,31 +7,20 @@ function pageSetup() {
 
 function setup() {
     canvas = createCanvas(1250, 650);
-    let theCanvas = document.getElementById('the-canvas')
 }
 
 let blocks = []
 let balls = []
+let endPoints = []
 let x = 0
 let y = 0
 
 
 
 
-let firstBall = new Ball(300, 350, 4, 2, 5);
-let secondBall = new Ball(200, 250, 29, 10, 5);
-
-let firstBlock = new Block(200, 200, 400, 200, 0, '#FF1493')
-let secondBlock = new Block(200, 400, 400, 400, 0, '#FF1493')
-let thirdBlock = new Block(200, 300, 400, 300, 0, '#FF1493')
-
-blocks.push(firstBlock)
-blocks.push(secondBlock)
-blocks.push(thirdBlock)
-
-balls.push(firstBall)
-balls.push(secondBall)
-
+levels.levelone.balls.forEach(ball => balls.push(ball))
+levels.levelone.blocks.forEach(block => blocks.push(block))
+levels.levelone.endPoint.forEach(end => endPoints.push(end))
 let clickData = []
 
 function downClick() {
@@ -69,6 +58,10 @@ function draw() {
             blo.show()
             checkCollide(ball, blo)
         });
+        endPoints.forEach(function(point){
+            point.show()
+            checkGoal(ball, point)
+        })
 
         ball.x += ball.xSpeed;
         ball.y += ball.ySpeed;
