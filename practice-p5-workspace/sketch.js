@@ -1,44 +1,76 @@
-let canvas = document.createElement('canvas')
-canvas.id = 'game-canvas'
+document.addEventListener('DOMContentLoaded', pageSetup)
+
+function pageSetup() {
+    let theCanvas = document.getElementById('defaultCanvas0')
+    document.addEventListener('mousedown', downClick)
+    document.addEventListener('mouseup', upClick)
+}
 
 function setup() {
-  canvas = createCanvas(650, 650);
+    canvas = createCanvas(650, 650);
 }
 
 let blocks = []
-
-let x = 300;
-let y = 300;
-let xspeed = 20;
-let yspeed = 50;
-let z = 0
-let direction = 1;
+let balls = []
+let x = 0
+let y = 0
 
 
-let newBall = new Ball(x, y, 10, 0, z);
-let firstBlock = new Block(200, 200, 400, 200, 0)
-let secondBlock = new Block(200, 400, 400, 400, 0)
-let thirdBlock = new Block(200, 300, 400, 300, 0)
+
+
+let firstBall = new Ball(300, 350, 4, 2, 5);
+let secondBall = new Ball(200, 250, 29, 10, 5);
+
+let firstBlock = new Block(200, 200, 400, 200, 0, '#FF1493')
+let secondBlock = new Block(200, 400, 400, 400, 0, '#FF1493')
+let thirdBlock = new Block(200, 300, 400, 300, 0, '#FF1493')
 
 blocks.push(firstBlock)
 blocks.push(secondBlock)
 blocks.push(thirdBlock)
-let px = newBall.x
-let py = newBall.y
+
+balls.push(firstBall)
+balls.push(secondBall)
+
+let clickData = []
+
+function downClick() {
+
+    let x1 = mouseX
+    let y1 = mouseY
+
+    clickData.push(Math.round(x1 / 50) * 50)
+    clickData.push(Math.round(y1 / 50) * 50)
+}
+
+function upClick() {
+    let x2 = mouseX
+    let y2 = mouseY
+
+    clickData.push(Math.round(x2 / 50) * 50)
+    clickData.push(Math.round(y2 / 50) * 50)
+
+    let newBlock = new Block(clickData[0], clickData[1], clickData[2], clickData[3], 0, '#FF1493')
+    blocks.push(newBlock)
+    clickData = []
+}
 
 function draw() {
-  let px = newBall.x
-  let py = newBall.y
-  background(0);
-  newBall.show();
-  newBall.x = x;
-  newBall.y = y
-  newBall.wallCollide()
-  for (let i = 0; i < blocks.length; i++) {
-    blo = blocks[i]
-    blo.show()
-    newBall.checkCollide(blo)
-  }
-  x += xspeed
-  y += yspeed
+
+    background(0);
+    
+    if (blocks.length == 0) {
+        blocks.push(new Block(0, 0, 0, 0, 0, 0))
+    }
+
+    balls.forEach(function(ball) {
+        ball.show()
+        blocks.forEach(function(blo){
+            blo.show()
+            checkCollide(ball, blo)
+        });
+
+        ball.x += ball.xSpeed;
+        ball.y += ball.ySpeed;
+    });
 }
