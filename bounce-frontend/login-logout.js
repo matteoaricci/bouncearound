@@ -34,6 +34,7 @@ function renderLogin() {
 
 function processLogin(event) {
     event.preventDefault()
+    console.log("hit 1")
     let form = event.currentTarget
     let name = form.children.name.value
     let password = form.children.password.value
@@ -60,13 +61,14 @@ function processLogin(event) {
             } 
         })
         .catch(error => {
+            debugger
             alert("Sorry, there was a problem with the server!")
             form.reset()
         })
-        
+        console.log("hit 2")
 }
 
 function processLogout(event) {
-localStorage.clear()
-welcomePageSetup()
+    localStorage.clear()
+    welcomePageSetup()
 }

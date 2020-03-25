@@ -15,10 +15,10 @@ function renderUserShowPage(user) {
     navLogout.innerText = "Logout"
     navLogout.id = "nav-logout"
     navLogout.addEventListener("click", processLogout)
-
+    // playBtn.innerText="Play"
+    // playBtn.addEventListener("click", loadGameHtml)
+    
+    // mainBox.append(playBtn)
 
     navBar.append(navHello, navLevels, navLogout)
-
-
-
 }

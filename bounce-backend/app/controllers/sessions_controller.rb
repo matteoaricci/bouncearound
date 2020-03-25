@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
         user = User.find_by(name: params[:name])
         if user && user.authenticate(params[:password])
             render json: user
+            user
         else
             render json: {
                 message: "No user found with those credentials"

@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         if user.valid?
             user.save
             render json: user
+            byebug
         else 
             render json: {
                 message: user.errors.full_messages

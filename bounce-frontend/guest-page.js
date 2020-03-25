@@ -10,9 +10,9 @@ function renderGuest() {
     navLogin.innerText = "Login"
     navLogin.id = "nav-login"
     navLogin.addEventListener("click", renderLogin)
-    // playBtn.innerText="Play"
-    // playBtn.addEventListener("click", play)
+    playBtn.innerText="Play"
+    playBtn.addEventListener("click", loadGameHtml)
     
-    // mainBox.append(playBtn)
+    mainBox.append(playBtn)
     navBar.append(navHello, navLogin)
 }
