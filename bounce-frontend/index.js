@@ -9,11 +9,12 @@ window.onload=function(){
     // introAudio.play()
   }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     homeScreen()
     let gameTitleHomeBtn = document.getElementById("game-title")
-    gameTitleHomeBtn.addEventListener("click", homeScreen)
+    gameTitleHomeBtn.addEventListener("click", () => {
+        window.location.href = "index.html";
+        homeScreen})
 })
 
 function homeScreen() {

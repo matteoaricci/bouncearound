@@ -1,5 +1,7 @@
 function loadGameHtml() {
     window.location.href = "game.html";
+}
 
-    // need to manipulate DOM
+function returnHome() {
+    window.location.href = "index.html";
 }

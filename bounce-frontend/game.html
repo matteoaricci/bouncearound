@@ -6,24 +6,34 @@
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="startwinkle.css">
     </head>
     
     <body>   
-        <!-- <audio id='welcome-music' src="musicfiles/In Motion - Social Network.mp3" muted></audio> -->
+     
         <span><h1 id='game-title'>Bounce Around</h1></span>
+            <audio id='game-music' src="musicfiles/celestetheme.mp3" loop></audio>
+            <script type="text/javascript">
+                // let audio = document.getElementById('game-music')
+                // audio.play()
+            </script>
+        <div><h1 id='level'></h1></div>
+        <button id='audioBtnGame'></button>
         <div class = "navbar-nav" id = "navbar">       
         </div>
-        <main id = "main">   
+        <main id = "main-canvas" class="text-center">   
         </main>
+       
 
-    <body id = "body">
+    <!-- <body> -->
         <div class='stars'>
             <div class='twinkling'>
-                <span><h1 id='game-title'>Bounce Around</h1></span>
-                <div class = "navbar-nav" id = "navbar">       
-                </div>
-                <main id = "main">   
-                </main>
+               
+                <!-- <span><h1 id='game-title'>Bounce Around</h1></span> -->
+                <!-- <div class = "navbar-nav" id = "navbar">        -->
+                <!-- </div>
+                    <main id = "main">   
+                    </main> -->
                 <script type="text/javascript" src='../practice-p5-workspace/p5.js'></script>
                 <script type="text/javascript" src='../practice-p5-workspace/p5.sound.js'></script>
                 <script type="text/javascript" src='../practice-p5-workspace/p5.sound.min.js'></script>
@@ -40,14 +50,14 @@
                 <script type="text/javascript" src='user-show-page.js'></script>
                 <script type="text/javascript" src='new-user.js'></script>
                 <script type="text/javascript" src='login-logout.js'></script>
-                <script type="text/javascript" src='index.js'></script>
+                <script type="text/javascript" src="game.js"></script>
+                <!-- <script type="text/javascript" src='index.js'></script> -->
                 <script src="neonFlicker.js"></script>
                
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-            </div>
-        </div>
-        </body>
-        
-    </html>
+                    <script type="text/javascript">
+                        let theTitle = document.getElementById('game-title')
+                        theTitle.addEventListener('click', returnHome)
+                    </script>

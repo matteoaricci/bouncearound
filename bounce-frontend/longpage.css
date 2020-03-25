@@ -24,6 +24,25 @@
 }
 
 #create-user-button {
+    margin: 3%;
     text-align: center;
     font-family: 'karmatic-arcade';
+}
+
+#nav-login.btn.btn-light {
+    margin-top: 2%;
+    font-family: 'karmatic-arcade';
+    width: 25%;
+    text-align: center;
+}
+
+#play-game-btn {
+    margin-top: 5%;
+    font-family: 'karmatic-arcade';
+    width: 25%;
+}
+
+#nav-hello {
+    font-family: 'karmatic-arcade';
+    margin-top: 2%;
 }

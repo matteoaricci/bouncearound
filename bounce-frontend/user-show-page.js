@@ -5,6 +5,8 @@ function renderUserShowPage(user) {
     let navHello = document.createElement("div")
     let navLevels = document.createElement("button")
     let navLogout = document.createElement("button")
+    let playLevel1 = document.createElement("button")
+    let playCurrentLevel = document.createElement("button")
     
     navBar.innerText = ""
     mainBox.innerText = ""
@@ -15,10 +17,15 @@ function renderUserShowPage(user) {
     navLogout.innerText = "Logout"
     navLogout.id = "nav-logout"
     navLogout.addEventListener("click", processLogout)
-    // playBtn.innerText="Play"
-    // playBtn.addEventListener("click", loadGameHtml)
+    playLevel1.innerText="Start New Game"
+    playLevel1.addEventListener("click", () =>{
+        localStorage.setItem("playLevel", 1)
+        loadGameHtml()})
+    playCurrentLevel.innerText="Continue Current Level"
+    playCurrentLevel.addEventListener("click", () => {
+        localStorage.setItem("playLevel", localStorage.getItem("userCurrentLevel"))
+        loadGameHtml()})
     
-    // mainBox.append(playBtn)
-
     navBar.append(navHello, navLevels, navLogout)
+    mainBox.append(playLevel1, playCurrentLevel)
 }
