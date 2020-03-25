@@ -10,13 +10,18 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 function gameSetup() {
     let level = document.getElementById("level")
+    level.className += 'text-center'
     level.innerText = `Level ${localStorage.getItem("playLevel")}`
+    let audioDiv = document.getElementById('level-title')
+    audioDiv.className = 'text-center'
 
     let mainBox = document.getElementById("main")
     let audioBtn = document.getElementById('audioBtnGame')
     
     audioBtn.innerText = "Audio"
     audioBtn.className = 'btn btn-light'
+    audioDiv.append(audioBtn)
+    
     audioBtn.addEventListener("click", pauseSoundGame)
 }
 

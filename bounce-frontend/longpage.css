@@ -15,17 +15,22 @@
 }
 
 #login-form {
+    display: block;
     color: white;
     text-align: center;
+    font-family: "" ;
 }
 
 #login-form h1 {
-    font-family: 'lazer84regular';
+    padding-top: 1%;
+    font-size: 18px;
+    font-family: 'karmatic-arcade';
+    margin-bottom: 2%;
 }
 
 #create-user-button {
     margin: 3%;
-    text-align: center;
+    border-color: transparent;
     font-family: 'karmatic-arcade';
 }
 
@@ -33,7 +38,7 @@
     margin-top: 2%;
     font-family: 'karmatic-arcade';
     width: 25%;
-    text-align: center;
+    background-color: white;
 }
 
 #play-game-btn {
@@ -45,4 +50,59 @@
 #nav-hello {
     font-family: 'karmatic-arcade';
     margin-top: 2%;
+}
+
+#level-title {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+h1#level {
+    text-align: center;
+    font-family: "karmatic-arcade";
+   
+}
+
+#audioBtnGame {
+    border-color: transparent;
+    font-family: 'karmatic-arcade';
+    margin-bottom: 1%;
+}
+
+input {
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: #FF1493;
+    font-size: 13px;
+    font-family: 'karmatic-arcade';
+  }
+
+#login-name {
+    font-family: 'karmatic-arcade';
+}
+
+
+.submit-button {
+    font-family: 'karmatic-arcade';
+}
+
+#create-user-form {
+    text-align: center;
+}
+
+#create-title {
+    color: white;
+    font-size: 18px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: 'karmatic-arcade';
+}
+
+#create-user-name {
+    font-family: 'karmatic-arcade';
+}
+
+#create-password {
+    font-family: "";
 }

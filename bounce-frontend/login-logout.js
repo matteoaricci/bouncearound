@@ -11,25 +11,31 @@ function renderLogin() {
     let submit = document.createElement('input')
     let createButtonBox = document.createElement("div")
     let create = document.createElement('button')
+    let arbitraryDiv = document.createElement('div')
     
     form.id = "login-form"
     logIn.innerText = "Login"
     name.type = "text"
     name.name = "name"
+    name.id = "login-name"
     name.placeholder = "Username"
     password.type = "password"
     password.name = "password"
     password.placeholder = "Password"
     submit.type = "submit"
+    submit.classList.add("submit-button")
     form.addEventListener("submit", processLogin)
     createButtonBox.id = "create-user-button"
     createButtonBox.className = 'btn btn-light'
+    arbitraryDiv.className = 'text-center'
+    arbitraryDiv.id = 'arbitrary-div'
     create.innerText = "Create New Account"
     create.addEventListener('click', renderNewUserForm)
     
     form.append(logIn, name, password, submit)
     createButtonBox.append(create)
-    mainBox.append(form, createButtonBox)
+    arbitraryDiv.append(createButtonBox)
+    mainBox.append(form, arbitraryDiv)
 }
 
 function processLogin(event) {

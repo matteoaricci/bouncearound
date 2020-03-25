@@ -18,10 +18,14 @@ function renderUserShowPage(user) {
     navLogout.id = "nav-logout"
     navLogout.addEventListener("click", processLogout)
     playLevel1.innerText="Start New Game"
+    playLevel1.className = "btn btn-light"
+    playLevel1.id = 'play-1'
     playLevel1.addEventListener("click", () =>{
         localStorage.setItem("playLevel", 1)
         loadGameHtml()})
     playCurrentLevel.innerText="Continue Current Level"
+    playCurrentLevel.className = 'btn btn-light'
+    playCurrentLevel.id = 'play-current'
     playCurrentLevel.addEventListener("click", () => {
         localStorage.setItem("playLevel", localStorage.getItem("userCurrentLevel"))
         loadGameHtml()})

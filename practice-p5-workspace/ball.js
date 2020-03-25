@@ -11,9 +11,9 @@ class Ball {
 
     }
     show() {
-        stroke(100, 200, 200)
+        stroke(255, 255, 255)
         strokeWeight(4)
-        fill(200, 100, 100)
+        fill(255, 255, 255)
         ellipse(this.x, this.y, this.radius, this.radius)
     }
 }
@@ -70,7 +70,12 @@ function calculateVectors(ball, block) {
 function checkGoal(ball, point){
     let hit = collideRectCircle(point.x1, point.y1, point.w, point.h, ball.x, ball.y, ball.radius * 2)
     if (hit) {
-        ball.xSpeed = 0
-        ball.ySpeed = 0
+        // ball.xSpeed = 0
+        // ball.ySpeed = 0
+        setTimeout(() => {
+            ball.xSpeed = 0
+            ball.ySpeed = 0
+            blocks = []
+        }, 2000);
     }
 }

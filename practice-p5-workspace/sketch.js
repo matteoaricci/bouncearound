@@ -6,8 +6,13 @@ function pageSetup() {
 }
 
 function setup() {
+    if (window.innerHeight > 1000){
     canvas = createCanvas(1250, 650);
     canvas.parent('main-canvas')
+    } else {
+    canvas = createCanvas(700, 350);
+    canvas.parent('main-canvas')   
+    }
 }
 
 
@@ -57,14 +62,14 @@ function draw() {
     createGrid()
     balls.forEach(function (ball) {
         ball.show()
-        blocks.forEach(function (blo) {
-            blo.show()
-            checkCollide(ball, blo)
-        });
         endPoints.forEach(function (point) {
             point.show()
             checkGoal(ball, point)
         })
+        blocks.forEach(function (blo) {
+            blo.show()
+            checkCollide(ball, blo)
+        });
 
         ball.x += ball.xSpeed;
         ball.y += ball.ySpeed;

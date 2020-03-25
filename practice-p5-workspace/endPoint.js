@@ -8,6 +8,6 @@ class Endpoint{
     show(){
         rect(this.x1, this.y1, this.w, this.h)
         fill(255, 0, 0)
-        noStroke()
+        stroke(255, 255, 255)
     }
 }

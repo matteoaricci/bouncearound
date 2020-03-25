@@ -9,14 +9,18 @@ function renderNewUserForm(event) {
     let submit = document.createElement('input')
 
     form.id = "create-user-form"
+    makeAccount.id = "create-title"
     makeAccount.innerText = "Create New Account"
     name.type = "text"
     name.name = "name"
     name.placeholder = "Username"
+    name.id = "creat-user-name"
     password.type = "password"
     password.name = "password"
+    password.id = "create-password"
     password.placeholder = "Password"
     submit.type = "submit"
+    submit.classList.add("submit-button")
     form.addEventListener("submit", processCreateUser)
     
     form.append(makeAccount, name, password, submit)
@@ -25,7 +29,6 @@ function renderNewUserForm(event) {
 
 function processCreateUser(event) {
     event.preventDefault()
-    // console.log("creating new user....")
 
     let form = event.currentTarget
     let name = form.children.name.value
