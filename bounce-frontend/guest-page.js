@@ -18,8 +18,8 @@ function renderGuest() {
     playBtn.id = 'play-game-btn'
     playBtn.className = 'btn btn-light'
     playBtn.addEventListener("click", () => {
-        localStorage.setItem("playLevel", 1)
-        loadGameHtml()
+        sessionStorage.setItem("playLevel", 1)
+        loadGameHtmlGuest()
     })
     
     mainBox.append(playBtn)

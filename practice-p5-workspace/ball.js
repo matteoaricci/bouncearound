@@ -70,12 +70,20 @@ function calculateVectors(ball, block) {
 function checkGoal(ball, point){
     let hit = collideRectCircle(point.x1, point.y1, point.w, point.h, ball.x, ball.y, ball.radius * 2)
     if (hit) {
-        // ball.xSpeed = 0
-        // ball.ySpeed = 0
-        setTimeout(() => {
-            ball.xSpeed = 0
-            ball.ySpeed = 0
-            blocks = []
-        }, 2000);
+        balls = []
+        ball.xSpeed = 0
+        ball.ySpeed = 0
+        if (localStorage.getItem("userId")) {
+        localStorage.setItem("playLevel", `${parseInt(localStorage.getItem("playLevel")) + 1}`)
+        loadGameHtml()
+        } else {
+        sessionStorage.setItem("playLevel", `${parseInt(sessionStorage.getItem("playLevel")) + 1}`)
+        loadGameHtmlGuest()}
+        }
+
+        // setTimeout(() => {
+        //     ball.xSpeed = 0
+        //     ball.ySpeed = 0
+        //     blocks = []
+        // }, 2000);
     }
-}

@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", () =>{
 function gameSetup() {
     let level = document.getElementById("level")
     level.className += 'text-center'
+    if (localStorage.getItem("userId")) {
     level.innerText = `Level ${localStorage.getItem("playLevel")}`
+    } else {
+    level.innerText = `Level ${sessionStorage.getItem("playLevel")}`
+    }
     let audioDiv = document.getElementById('level-title')
     audioDiv.className = 'text-center'
 
