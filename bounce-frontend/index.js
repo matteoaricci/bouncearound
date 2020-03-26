@@ -6,7 +6,7 @@ window.onload=function(){
     introAudio.loop = "loop"
     introAudio.dataset.status = "on"
     body.append(introAudio)
-    // introAudio.play()
+    introAudio.play()
   }
 
 document.addEventListener('DOMContentLoaded', () => {

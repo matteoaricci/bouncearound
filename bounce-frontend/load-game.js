@@ -9,3 +9,7 @@ function loadGameHtmlGuest() {
 function returnHome() {
     window.location.href = "index.html";
 }
+
+function endScreen() {
+    window.location.href = "end-screen.html";
+}

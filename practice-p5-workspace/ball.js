@@ -75,10 +75,19 @@ function checkGoal(ball, point){
         ball.ySpeed = 0
         if (localStorage.getItem("userId")) {
         localStorage.setItem("playLevel", `${parseInt(localStorage.getItem("playLevel")) + 1}`)
-        loadGameHtml()
+            if (parseInt(localStorage.getItem('playLevel')) > 5) {
+                endScreen()
+            } else {
+                loadGameHtml()
+            }
         } else {
         sessionStorage.setItem("playLevel", `${parseInt(sessionStorage.getItem("playLevel")) + 1}`)
-        loadGameHtmlGuest()}
+            if (parseInt(sessionStorage.getItem("playLevel")) > 5) {
+                endScreen()
+            } else {
+                loadGameHtmlGuest()}
+            }
+        
         }
 
         // setTimeout(() => {

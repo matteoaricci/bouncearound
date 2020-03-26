@@ -106,3 +106,10 @@ input {
 #create-password {
     font-family: "";
 }
+
+#thanks {
+    font-family: 'karmatic-arcade';
+    color: white;
+    padding-top: 10%;
+    text-align: center;
+}

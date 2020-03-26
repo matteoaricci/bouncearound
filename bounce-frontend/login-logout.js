@@ -84,7 +84,7 @@ function processLogout(event) {
         body: JSON.stringify(payload)
     })
         .then(rsp => rsp.json())
-        .then(user => console.log("successfully updated"))
+        .then(user => console.log("successfully saved"))
 
     localStorage.clear()
     welcomePageSetup()

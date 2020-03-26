@@ -1,7 +1,7 @@
 window.onload=function(){
     let gameAudio = document.getElementById('game-music')
     gameAudio.dataset.status = "on"
-    // gameAudio.play()
+    gameAudio.play()
   }
 
 document.addEventListener("DOMContentLoaded", () =>{
