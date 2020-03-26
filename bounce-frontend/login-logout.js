@@ -47,7 +47,6 @@ function processLogin(event) {
 
     let payload = {name: name, password: password}
     
-
     fetch('http://localhost:3000/user/login', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
@@ -75,6 +74,18 @@ function processLogin(event) {
 }
 
 function processLogout(event) {
+    let userId = localStorage.getItem("userId")
+    let current_level = localStorage.getItem("playLevel")
+    payload = {id: userId, current_level: current_level}
+
+    fetch(`http://localhost:3000/users/${userId}`, {
+        method: 'PATCH',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    })
+        .then(rsp => rsp.json())
+        .then(user => console.log("successfully updated"))
+
     localStorage.clear()
     welcomePageSetup()
 }

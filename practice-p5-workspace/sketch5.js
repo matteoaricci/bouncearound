@@ -22,10 +22,9 @@ let endPoints = []
 let x = 0
 let y = 0
 
-levels.levelthree.balls.forEach(ball => balls.push(ball))
-levels.levelthree.blocks.forEach(block => blocks.push(block))
-levels.levelthree.endPoint.forEach(end => endPoints.push(end))
-
+levels.levelfive.balls.forEach(ball => balls.push(ball))
+levels.levelfive.blocks.forEach(block => blocks.push(block))
+levels.levelfive.endPoint.forEach(end => endPoints.push(end))
 let clickData = []
 
 function downClick() {
@@ -43,10 +42,6 @@ function upClick() {
 
     clickData.push(Math.round(x2 / 25) * 25)
     clickData.push(Math.round(y2 / 25) * 25)
-
-    if (blocks.length >= 6) {
-        blocks.splice(3, 1)
-    }
 
     let newBlock = new Block(clickData[0], clickData[1], clickData[2], clickData[3], 0, '#FF1493')
     blocks.push(newBlock)
